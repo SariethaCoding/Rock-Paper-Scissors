@@ -12,16 +12,27 @@ function getComputerChoice(){
     return(game_options[randomNumber]);
 }
 
+// Get the players choice for the game
+function getPlayerChoice() {
+    
+    let playerChoice = prompt("Pick Rock, Paper or Scissors");
+    
+    return playerChoice;
+}
 
+
+// plays one round of RPS
 function playRound(playerSelection, computerSelection){
-    console.log(playerSelection, computerSelection);
+    
     let pSelection = playerSelection.toLowerCase();
     let cSelection = computerSelection.toLowerCase();
-    //console.log(pSelection);
+    console.log(pSelection + " vs " + cSelection);
     
     // Both picked the same - it's a draw
     if (pSelection === cSelection) {
         console.log("It's a draw! You both choose " + computerSelection);
+        computerScore = computerScore + 1;
+        playerScore = playerScore + 1;
     }
 
 
@@ -64,22 +75,24 @@ function playRound(playerSelection, computerSelection){
 
 
 
+function playGame() {
+    // Play 5 rounds
+    for (let i = 0; i < 5; i++){
+        
+        let computerSelection = getComputerChoice();
+        let playerSelection = getPlayerChoice();
+        playRound(playerSelection, computerSelection);
+    }
 
-// Play 5 rounds
-for (let i = 0; i >= 5; i++){
-    let computerSelection = getComputerChoice();
-    let playerSelection = prompt("Pick Rock, Paper or Scissors");
-    playRound(playerSelection, computerSelection);
-}
-
-// print final scores
-if (playerScore === computerScore) {
-    console.log("It's a draw - you both scored " + playerScore);
-}
-else if (playerScore > computerScore) {
-    console.log("Player Wins! Player score : " + playerScore + " vs Computer score : " + computerScore);
-}
-else if (computerScore > playerScore) {
-    console.log("Computer Wins! Player score : " + playerScore + " vs Computer score : " + computerScore);
+    // print final scores
+    if (playerScore === computerScore) {
+        console.log("It's a draw - you both scored " + playerScore);
+    }
+    else if (playerScore > computerScore) {
+        console.log("Player Wins! Player score : " + playerScore + " vs Computer score : " + computerScore);
+    }
+    else if (computerScore > playerScore) {
+        console.log("Computer Wins! Player score : " + playerScore + " vs Computer score : " + computerScore);
+    }
 }
 
