@@ -15,9 +15,18 @@ function getComputerChoice(){
 // Get the players choice for the game
 function getPlayerChoice() {
     
-    let playerChoice = prompt("Pick Rock, Paper or Scissors");
+    let playerChoice = "";
+    let correctInput = false;
     
+    // Check user input if it is valid or not
+    do {
+        playerChoice = prompt("Pick Rock, Paper or Scissors");
+    }
+
+    while (playerChoice.toLowerCase() !== "rock" && playerChoice.toLowerCase() !== "paper" && playerChoice.toLowerCase() !== "scissors");
+
     return playerChoice;
+    
 }
 
 
@@ -65,7 +74,7 @@ function playRound(playerSelection, computerSelection){
             computerScore = computerScore + 1;
         }
         else if (pSelection === "rock") {
-            console.log("Rock smashes Scissors - Player wins!");
+            console.log("Rock beats Scissors - Player wins!");
             playerScore = playerScore + 1;
         }
     }
