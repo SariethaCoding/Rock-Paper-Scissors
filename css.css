@@ -15,7 +15,7 @@ h1 {
 }
 #container {
     width:600px;
-    height:370px;
+    height:410px;
     margin:auto;
     background-color:beige;
     border:2px solid darkslategray;
@@ -44,8 +44,10 @@ h1 {
 
 #game {
     margin-top:30px;
-    font-size: 18px;
+    font-size: 20px;
     height: 30px;
+    color:orange;
+    font-weight: bold;
 }
 
 #images {
@@ -91,4 +93,11 @@ button:hover {
     background-color:darkslategrey;
     cursor:grab;
     
+}
+
+button.newGame {
+    background-color: darkcyan;
+}
+button.newGame:hover {
+    background-color:orangered;
 }
