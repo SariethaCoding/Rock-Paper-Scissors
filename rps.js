@@ -2,6 +2,22 @@
 // Global vars to keep player and computer scores
 let computerScore = 0;
 let playerScore = 0;
+let gameOver = false;
+
+
+
+function resetGame(){
+    computerScore = 0;
+    playerScore = 0;
+
+    document.querySelector('#pc-score').textContent = "PC : " + computerScore;
+    document.querySelector('#player-score').textContent = "Player : " + playerScore;
+
+    document.querySelector('#game').textContent = "New Game Started"
+
+    gameOver = false;
+
+}
 
 
 // Randomly return either Rock Paper or Scissors as the computers' choice for the game
@@ -86,29 +102,34 @@ function playRound(playerSelection, computerSelection){
 
 function playGame(playerChoice) {
         
+    if (!gameOver) {
         let computerSelection = getComputerChoice();
         let playerSelection = playerChoice;
         playRound(playerSelection, computerSelection);
     
-    // End game after player/pc scores 20
-    if ((playerScore === 2) || (computerScore === 2)) {
-        //document.querySelector('#game').textContent = "GAME OVER";
+        // End game after player/pc scores 10
+        if ((playerScore === 10) || (computerScore === 10)) {
+            //document.querySelector('#game').textContent = "GAME OVER";
 
-   // print final scores
-   if (playerScore === computerScore) {
-    document.querySelector('#game').textContent = "GAME OVER | It's a draw!";
-    }
-    else if (playerScore > computerScore) {
-        document.querySelector('#game').textContent = "GAME OVER | Player Wins!";
-       
-    }
-    else if (computerScore > playerScore) {
-        document.querySelector('#game').textContent = "GAME OVER | Computer Wins!";
-    }
+        // print final scores
+        if (playerScore === computerScore) {
+            document.querySelector('#game').textContent = "GAME OVER | It's a draw!";
+            }
+            else if (playerScore > computerScore) {
+                document.querySelector('#game').textContent = "GAME OVER | Player Wins!";
+            
+            }
+            else if (computerScore > playerScore) {
+                document.querySelector('#game').textContent = "GAME OVER | Computer Wins!";
+            }
 
+            // Mark that the game is over and don't let the RPS buttons work
+            gameOver = true;
+            
+    
 
+        }
     }
-
 
     
     
