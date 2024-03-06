@@ -12,22 +12,6 @@ function getComputerChoice(){
     return(game_options[randomNumber]);
 }
 
-// Get the players choice for the game
-function getPlayerChoice() {
-    
-    let playerChoice = "";
-    let correctInput = false;
-    
-    // Check user input if it is valid or not
-    do {
-        playerChoice = prompt("Pick Rock, Paper or Scissors");
-    }
-
-    while (playerChoice.toLowerCase() !== "rock" && playerChoice.toLowerCase() !== "paper" && playerChoice.toLowerCase() !== "scissors");
-
-    return playerChoice;
-    
-}
 
 
 // plays one round of RPS
@@ -84,14 +68,12 @@ function playRound(playerSelection, computerSelection){
 
 
 
-function playGame() {
-    // Play 5 rounds
-    for (let i = 0; i < 5; i++){
+function playGame(playerChoice) {
         
         let computerSelection = getComputerChoice();
-        let playerSelection = getPlayerChoice();
+        let playerSelection = playerChoice;
         playRound(playerSelection, computerSelection);
-    }
+    
 
     // print final scores
     if (playerScore === computerScore) {
