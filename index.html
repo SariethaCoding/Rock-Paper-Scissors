@@ -4,19 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="rps.js"></script> 
+    <link rel="stylesheet" href="css.css">
     <title>Rock Paper Scissor</title>
 </head>
 <body>
 
+ 
+    <div id="container">
+        <h1>Rock Paper Scissors</h1>
 
+        <div id="scores">
+            
+            <div id="player-score">Player : 0</div>
+            <div id="pc-score">PC : 0</div>
 
-    <button onclick="playGame('rock')">Rock</button>
-    <button onclick="playGame('paper')">Paper</button>
-    <button onclick="playGame('scissors')">Scissors</button>
+        </div>
 
-    <div id="game"></div>
+        <div id="images">
+            <div id="playerimg"></div>
+            
+            <div id="pcimg"></div>
 
-    <div id="pc-score">PC : 0</div>
-    <div id="player-score">Player : 0</div>
+        </div>
+        <div id="game"></div>
+        
+        <br><br>
+
+        
+        <button onclick="playGame('rock')">Rock</button>
+        <button onclick="playGame('paper')">Paper</button>
+        <button onclick="playGame('scissors')">Scissors</button>
+    </div>
+
 </body>
 </html>

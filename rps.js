@@ -19,6 +19,19 @@ function playRound(playerSelection, computerSelection){
     
     let pSelection = playerSelection.toLowerCase();
     let cSelection = computerSelection.toLowerCase();
+
+    // Remove old image (by changing the class) and set the new image for selected R/P/S for PC
+    document.getElementById("pcimg").classList.remove("scissors");
+    document.getElementById("pcimg").classList.remove("rock");
+    document.getElementById("pcimg").classList.remove("paper");
+    document.getElementById("pcimg").classList.add(cSelection);
+
+    // Remove old image (by changing the class) and set the new image for selected R/P/S for Player
+   document.getElementById("playerimg").classList.remove("scissors");
+   document.getElementById("playerimg").classList.remove("rock");
+   document.getElementById("playerimg").classList.remove("paper");
+   document.getElementById("playerimg").classList.add(pSelection);
+
     console.log(pSelection + " vs " + cSelection);
     
     // Both picked the same - it's a draw
@@ -77,18 +90,27 @@ function playGame(playerChoice) {
         let playerSelection = playerChoice;
         playRound(playerSelection, computerSelection);
     
-    /*
-    // print final scores
-    if (playerScore === computerScore) {
-        console.log("It's a draw - you both scored " + playerScore);
+    // End game after player/pc scores 20
+    if ((playerScore === 2) || (computerScore === 2)) {
+        //document.querySelector('#game').textContent = "GAME OVER";
+
+   // print final scores
+   if (playerScore === computerScore) {
+    document.querySelector('#game').textContent = "GAME OVER | It's a draw!";
     }
     else if (playerScore > computerScore) {
-        document.querySelector('#game').textContent = ("Player Wins! Player score : " + playerScore + " vs Computer score : " + computerScore);
-        document.querySelector('#pc-score').textContent = "PC : " + computerScore;
+        document.querySelector('#game').textContent = "GAME OVER | Player Wins!";
+       
     }
     else if (computerScore > playerScore) {
-        console.log("Computer Wins! Player score : " + playerScore + " vs Computer score : " + computerScore);
+        document.querySelector('#game').textContent = "GAME OVER | Computer Wins!";
     }
-    */
+
+
+    }
+
+
+    
+    
 }
 
