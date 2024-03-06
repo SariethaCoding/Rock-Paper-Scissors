@@ -23,7 +23,7 @@ function playRound(playerSelection, computerSelection){
     
     // Both picked the same - it's a draw
     if (pSelection === cSelection) {
-        console.log("It's a draw! You both choose " + computerSelection);
+        document.querySelector('#game').textContent = ("It's a draw! You both choose " + computerSelection);
         computerScore = computerScore + 1;
         playerScore = playerScore + 1;
     }
@@ -32,38 +32,41 @@ function playRound(playerSelection, computerSelection){
     else if (cSelection === "rock") {
         if (pSelection === "scissors") {
             // rock beats scissors, pc wins
-            console.log("Rock beats Scissors - Computer wins!");
+            document.querySelector('#game').textContent = ("Rock beats Scissors - Computer wins!");
             computerScore = computerScore + 1;
         }
         else if (pSelection === "paper") {
-            console.log("Paper covers Rock - Player wins!");
+            document.querySelector('#game').textContent = ("Paper covers Rock - Player wins!");
             playerScore = playerScore + 1;
         }
     }
 
     else if (cSelection === "paper")     {
         if (pSelection === "scissors") {
-            console.log("Scissors cut Paper - Player wins!");
+            document.querySelector('#game').textContent = ("Scissors cut Paper - Player wins!");
             playerScore = playerScore + 1;
         }
         else if (pSelection === "rock") {
-            console.log("Paper covers Rock - Computer wins!");
+            document.querySelector('#game').textContent = ("Paper covers Rock - Computer wins!");
             computerScore = computerScore + 1;
         }
     }
 
     else if (cSelection === "scissors") {
         if (pSelection === "paper") {
-            console.log("Scissors cut Paper - Computer wins!");
+            document.querySelector('#game').textContent = ("Scissors cut Paper - Computer wins!");
             computerScore = computerScore + 1;
         }
         else if (pSelection === "rock") {
-            console.log("Rock beats Scissors - Player wins!");
+            document.querySelector('#game').textContent = ("Rock beats Scissors - Player wins!");
             playerScore = playerScore + 1;
         }
     }
 
     
+    document.querySelector('#pc-score').textContent = "PC : " + computerScore;
+    document.querySelector('#player-score').textContent = "Player : " + playerScore;
+
 }
 
 
@@ -74,16 +77,18 @@ function playGame(playerChoice) {
         let playerSelection = playerChoice;
         playRound(playerSelection, computerSelection);
     
-
+    /*
     // print final scores
     if (playerScore === computerScore) {
         console.log("It's a draw - you both scored " + playerScore);
     }
     else if (playerScore > computerScore) {
-        console.log("Player Wins! Player score : " + playerScore + " vs Computer score : " + computerScore);
+        document.querySelector('#game').textContent = ("Player Wins! Player score : " + playerScore + " vs Computer score : " + computerScore);
+        document.querySelector('#pc-score').textContent = "PC : " + computerScore;
     }
     else if (computerScore > playerScore) {
         console.log("Computer Wins! Player score : " + playerScore + " vs Computer score : " + computerScore);
     }
+    */
 }
 
