@@ -15,12 +15,18 @@ h1 {
 }
 #container {
     width:600px;
-    height:410px;
+    height:500px;
     margin:auto;
     background-color:beige;
     border:2px solid darkslategray;
     border-radius: 10px;
     padding:20px;
+}
+
+#info{
+    color:darkslategray;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 #scores {
