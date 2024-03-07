@@ -15,6 +15,20 @@ function resetGame(){
 
     document.querySelector('#game').textContent = "New Game Started"
 
+    // To do - clear images
+     // Remove old image (by changing the class) and set the new image for selected R/P/S for PC
+     let currentClass = document.querySelector("#pcimg").classList;
+     if(currentClass != ''){    
+         document.querySelector("#pcimg").classList.remove(currentClass); 
+     }
+   
+     // Remove old image (by changing the class) and set the new image for selected R/P/S for Player
+    let currentPClass = document.querySelector("#playerimg").classList;
+    if (currentPClass != '') {
+         document.querySelector("#playerimg").classList.remove(currentPClass);
+    }
+    
+
     gameOver = false;
 
 }
