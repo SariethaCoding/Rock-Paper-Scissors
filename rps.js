@@ -37,18 +37,21 @@ function playRound(playerSelection, computerSelection){
     let cSelection = computerSelection.toLowerCase();
 
     // Remove old image (by changing the class) and set the new image for selected R/P/S for PC
-    document.getElementById("pcimg").classList.remove("scissors");
-    document.getElementById("pcimg").classList.remove("rock");
-    document.getElementById("pcimg").classList.remove("paper");
-    document.getElementById("pcimg").classList.add(cSelection);
+    let currentClass = document.querySelector("#pcimg").classList;
+    if(currentClass != ''){    
+        document.querySelector("#pcimg").classList.remove(currentClass); 
+    }
+    document.querySelector("#pcimg").classList.add(cSelection);
 
     // Remove old image (by changing the class) and set the new image for selected R/P/S for Player
-   document.getElementById("playerimg").classList.remove("scissors");
-   document.getElementById("playerimg").classList.remove("rock");
-   document.getElementById("playerimg").classList.remove("paper");
-   document.getElementById("playerimg").classList.add(pSelection);
+   let currentPClass = document.querySelector("#playerimg").classList;
+   if (currentPClass != '') {
+        document.querySelector("#playerimg").classList.remove(currentPClass);
+   }
+   
+   document.querySelector("#playerimg").classList.add(pSelection);
 
-    console.log(pSelection + " vs " + cSelection);
+    //console.log(pSelection + " vs " + cSelection);
     
     // Both picked the same - it's a draw
     if (pSelection === cSelection) {
