@@ -1,109 +1,192 @@
 body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    background-color:slategrey;
+    background-color:#221009;
 }
 
 h1 {
     font-size: 35px;
-    color:white;
+    color:#000000;
     margin-top:-10px;
     width:100%;
-    background-color:darkslategray;
+    background-color:#ffd200;
     border-radius: 5px;
     padding:10px 0px 10px 0px;
 }
 #container {
     width:600px;
-    height:500px;
+    height:100%;
     margin:auto;
-    background-color:beige;
-    border:2px solid darkslategray;
+    background-color:#832C22;
+    border:2px solid #ffd200;
     border-radius: 10px;
     padding:20px;
 }
 
 #info{
-    color:darkslategray;
+    color:white;
     font-size: 18px;
     margin-bottom: 20px;
 }
 
-#scores {
-    border: 0px solid black;
-    width:400px;
-    margin: auto;
-    display: flex;
+.scoreboard {
+    width:500px;
+    margin: auto;    
     font-size: 20px;
     font-weight: bold;
+    padding-bottom: 20px;
 }
 
-#pc-score{
-    color:darkcyan;
-    flex:1;
+.playersrow {
+    display: flex;
+    padding-bottom: 10px;
+}
+.player {
+    width:50%;
+    color:#ffd200;
+    font-size: 24px;
+    text-transform:uppercase;
 }
 
-#player-score {
-    color:darkcyan;
-    flex:1;
+.scoresrow {
+    display: flex;
+}
+
+.score {
+    margin:auto;
+    line-height: 50px;
+    border:0px solid white;
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+    border-radius: 50%;
+    background-color: #A73720;
+    color:white;
+}
+
+
+.gameinfo {
+    justify-content: space-evenly;
+    align-items: center;
+    display: flexbox;
+    height: 85px;
+    border: 0px solid black;
+    width: 500px;
+    margin:10px auto 20px auto;
 }
 
 #game {
-    margin-top:30px;
-    font-size: 20px;
-    height: 30px;
+    flex:1;
+    font-size: 30px;
     color:orange;
     font-weight: bold;
+    white-space: pre;
 }
 
-#images {
+.gameboard {
     display: flex;
     width:400px;
-    margin:auto;
+    margin:auto auto 20px auto;
     border:0px solid blue;
     justify-content: space-around;
+
+}
+
+.vs {
+    margin: auto;
+    font-size: 35px;
+    font-weight: bold;
 }
 
 #pcimg, #playerimg{
     width:150px;
     height:150px;
     border:0px solid gray;
-    
+}
+
+.noimg {
+    background-image: none;
 }
 
 .paper {
-    background-image: url("images/paper.png");
+    background-image: url("images/newpaper.png");
     background-repeat: no-repeat;
 }
 
 .rock {
-    background-image: url("images/rock.png");
+    background-image: url("images/newrock.png");
     background-repeat: no-repeat;
 }
 .scissors {
-    background-image: url("images/scissors.png");
+    background-image: url("images/newscissors.png");
     background-repeat: no-repeat;
 }
 
-button {
-    width:100px;
-    height:30px;
-    border:0px solid darkslategray;
-    color:white;
-    background-color:cadetblue;
-    font-weight: bold;
-    margin-right: 15px;
-    border-radius: 5px;
+
+.winner2 {
+animation-name: showwinner;
+animation-duration:.3s;   
+animation-fill-mode: forwards;
+border-radius: 50%;
+
 }
-button:hover {
-    background-color:darkslategrey;
+
+.winner {
+    /*animation: fadeIn .2s ease-in-out;*/
+    border-radius: 50%;
+    background-color: #ffd200;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+/* Animation for winning selection */
+@keyframes showwinner {
+    0%   {background-color:#832C22;}
+    100% {background-color:#ffd200;}  
+  
+}
+
+
+
+.playbuttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 400px;
+    margin:10px auto 20px auto;
+    border: 0px solid yellow;
+}
+
+.playbuttons button {
+    width:100px;
+    height:100px;
+    border:3px solid #E9E6D7;
+    color:#A73720;
+    background-color:#E9E6D7;
+    font-weight: bold;
+    border-radius: 50%;
+}
+.playbuttons button:hover {
+    background-color:#A73720;
+    color: #E9E6D7;
     cursor:grab;
+    border:3px solid #E9E6D7;
     
 }
 
-button.newGame {
-    background-color: darkcyan;
+.newGame {
+    width:320px;
+    height: 50px;
+    border-radius: 10px;
+    background-color:#ffd200;
+    font-size: 20px;
+    color:black;
+    border:0px solid #ffd200;
+    font-weight: bold;
 }
-button.newGame:hover {
+.newGame:hover {
     background-color:orangered;
+    color:#E9E6D7;
+    cursor:grab;
 }

@@ -15,32 +15,41 @@
 
         <div id="info">
             Make your selection by clicking on the buttons below.<br>
-            First player to reach a score of 10 wins the game!<br>
+            First player to reach a score of 5 wins the game!<br>
             
         </div>
 
-        <div id="scores">
-            
-            <div id="player-score">Player : 0</div>
-            <div id="pc-score">PC : 0</div>
+        <div class="scoreboard">
+            <div class="playersrow">
+                <div class="player">Player</div>
+                <div class="player">PC</div>
+            </div>
+            <div class="scoresrow">
+                <div class="score" id="player-score">0</div>
+                <div class="score" id="pc-score">0</div>
+            </div>
 
         </div>
 
-        <div id="images">
+        <div class="gameboard">
             <div id="playerimg"></div>
-            
+            <div class="vs">VS</div>
             <div id="pcimg"></div>
 
         </div>
-        <div id="game"></div>
         
-        <br><br>
+        <div class="gameinfo">
+            <div id="game"></div>
+        </div>
+        
 
-        <div id="playbuttons">
-            <button onclick="playGame('rock')">Rock</button>
-            <button onclick="playGame('paper')">Paper</button>
-            <button onclick="playGame('scissors')">Scissors</button>
-            <br><br>
+        <div class="playbuttons">
+            <button onclick="playGame('rock')"><img src="images/rocksmall.png" height="50px" width="50px"><br>Rock</button>
+            <button onclick="playGame('paper')"><img src="images/papersmall.png" height="50px" width="50px"><br>Paper</button>
+            <button onclick="playGame('scissors')"><img src="images/scissorssmall.png" height="50px" width="50px"><br>Scissors</button>
+        </div>
+        
+        <div>    
             <button onclick="resetGame()" class="newGame">New Game</button>
         </div>
     </div>
