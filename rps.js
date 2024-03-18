@@ -12,26 +12,14 @@ function resetGame(){
 
     document.querySelector('#pc-score').textContent = computerScore;
     document.querySelector('#player-score').textContent = playerScore;
+    document.querySelector("#vs").textContent = "";
 
     document.querySelector('#game').textContent = "New Game Started"
 
-    // To do - clear images
-     // Remove old image (by changing the class) and set the new image for selected R/P/S for PC
-     /*
-     let currentClass = document.querySelector("#pcimg").classList;
-     if(currentClass != ''){    
-         document.querySelector("#pcimg").classList.remove(currentClass); 
-     }
-   
-     // Remove old image (by changing the class) and set the new image for selected R/P/S for Player
-    let currentPClass = document.querySelector("#playerimg").classList;
-    if (currentPClass != '') {
-         document.querySelector("#playerimg").classList.remove(currentPClass);
-    }*/
-
     document.querySelector("#pcimg").classList = "noimg";
     document.querySelector("#playerimg").classList = "noimg";
-    
+ 
+    document.querySelector('.playbuttons').style.visibility = 'visible';
 
     gameOver = false;
 
@@ -62,6 +50,9 @@ function playRound(playerSelection, computerSelection){
 
     // Remove old image (by changing the class) and set the new image for selected R/P/S for Player
     document.querySelector("#playerimg").classList = pSelection;
+
+    // Display the VS
+    document.querySelector("#vs").textContent = "VS";
 
     //console.log(pSelection + " vs " + cSelection);
     
@@ -110,12 +101,12 @@ function playRound(playerSelection, computerSelection){
     else if(playerWins) {
         playerScore = playerScore + 1;
         document.querySelector('#playerimg').classList.add("winner");
-        document.querySelector('#game').textContent = ("Player wins");
+        document.querySelector('#game').textContent = ("Player wins round");
     }
     else if(pcWins) {
         computerScore = computerScore + 1;
         document.querySelector('#pcimg').classList.add("winner");
-        document.querySelector('#game').textContent = ("Computer wins");
+        document.querySelector('#game').textContent = ("Computer wins round");
     }
     
     
@@ -151,8 +142,8 @@ function playGame(playerChoice) {
 
             // Mark that the game is over and don't let the RPS buttons work
             gameOver = true;
-            
-    
+                        
+            document.querySelector('.playbuttons').style.visibility = 'hidden';
 
         }
     }
