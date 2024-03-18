@@ -92,7 +92,7 @@ h1 {
 
 }
 
-.vs {
+#vs {
     margin: auto;
     font-size: 35px;
     font-weight: bold;
@@ -173,6 +173,15 @@ border-radius: 50%;
     cursor:grab;
     border:3px solid #E9E6D7;
     
+}
+
+.fadedButtons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 400px;
+    margin:10px auto 20px auto;
+    border: 0px solid yellow;
+    opacity: 0.5;
 }
 
 .newGame {
